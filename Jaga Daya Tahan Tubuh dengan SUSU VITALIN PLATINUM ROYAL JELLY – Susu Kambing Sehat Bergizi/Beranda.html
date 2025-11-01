@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VITALIN Platinum - Susu Kambing Bubuk Premium</title>
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F4E4A6;
+            --gold-dark: #B8860B;
+            --dark: #1a1a1a;
+            --light: #f8f8f8;
+            --gray: #444;
+            --transition: all 0.5s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--gray) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--gold);
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1550583727-2b8d5c5c6d6a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero h1 span {
+            color: var(--gold);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--gold);
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .about-image:hover {
+            transform: scale(1.03);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .benefit-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-card p {
+            line-height: 1.6;
+        }
+        
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            height: 250px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Product Details */
+        .product-details {
+            background-color: #f0f0f0;
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .detail-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .detail-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .detail-card h3 {
+            color: var(--gold-dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .detail-card ul {
+            list-style: none;
+        }
+        
+        .detail-card ul li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .detail-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: bold;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--gray) 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--gold);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <span class="logo-icon">🐐</span>
+                    VITALIN Platinum
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#about">Tentang</a></li>
+                        <li><a href="#benefits">Manfaat</a></li>
+                        <li><a href="#gallery">Galeri</a></li>
+                        <li><a href="#details">Detail Produk</a></li>
+                        <li><a href="#contact">Pesan Sekarang</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>SUSU KAMBING BUBUK <span>VITALIN PLATINUM</span> ROYAL JELLY</h1>
+                <p>Sehat, Bergizi, dan Halal. Kombinasi sempurna susu kambing premium dengan Royal Jelly murni untuk menjaga daya tahan tubuh, memperkuat tulang, dan meningkatkan vitalitas secara alami.</p>
+                <a href="#contact" class="btn">Pesan Sekarang</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tentang Produk</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>VITALIN Platinum Royal Jelly</h3>
+                    <p>Apakah Anda sedang mencari susu kambing berkualitas tinggi yang tidak hanya lezat tapi juga kaya manfaat untuk kesehatan tubuh? Susu Kambing Bubuk VITALIN Platinum Royal Jelly hadir sebagai solusi tepat bagi Anda yang ingin menjaga daya tahan tubuh, memperkuat tulang, dan menambah vitalitas secara alami.</p>
+                    <p>Produk ini merupakan susu kambing bubuk premium yang dipadukan dengan Royal Jelly murni, menjadikannya kombinasi sempurna antara nutrisi hewani dan superfood alami dari lebah madu. Tidak heran jika VITALIN Platinum Royal Jelly menjadi pilihan masyarakat modern yang sadar akan pentingnya asupan bergizi dan halal setiap hari.</p>
+                    <p>VITALIN Platinum bukan susu kambing biasa. Produk ini diproses langsung dari peternakan sendiri yang memelihara kambing ras Saanen–Swiss, salah satu jenis kambing penghasil susu terbaik di dunia. Setiap butir susu diproses dengan teknologi modern dan higienis untuk menjaga kualitas nutrisi alami tanpa bahan kimia tambahan.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Susu Kambing Vitalin">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>Manfaat Utama</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card animate-on-scroll">
+                    <div class="benefit-icon">🦴</div>
+                    <h3>Kesehatan Tulang dan Sendi</h3>
+                    <p>Memperkuat tulang dan sendi, cocok untuk anak-anak dan lansia dengan kandungan kalsium alami yang tinggi.</p>
+                </div>
+                <div class="benefit-card animate-on-scroll">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3>Daya Tahan Tubuh</h3>
+                    <p>Meningkatkan sistem kekebalan tubuh secara alami dengan kombinasi nutrisi lengkap dari susu kambing dan royal jelly.</p>
+                </div>
+                <div class="benefit-card animate-on-scroll">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Energi dan Vitalitas</h3>
+                    <p>Memberikan stamina dan semangat hidup bagi pria dan wanita aktif sepanjang hari.</p>
+                </div>
+                <div class="benefit-card animate-on-scroll">
+                    <div class="benefit-icon">💆</div>
+                    <h3>Kecantikan Kulit</h3>
+                    <p>Memperbaiki jaringan kulit, mencerahkan, dan menjaga elastisitas dengan antioksidan alami.</p>
+                </div>
+                <div class="benefit-card animate-on-scroll">
+                    <div class="benefit-icon">🍽️</div>
+                    <h3>Pencernaan Sehat</h3>
+                    <p>Mudah dicerna dan cocok bagi intoleransi laktosa ringan dengan kandungan protein A2 beta-casein.</p>
+                </div>
+                <div class="benefit-card animate-on-scroll">
+                    <div class="benefit-icon">🧠</div>
+                    <h3>Fungsi Otak</h3>
+                    <p>Meningkatkan daya ingat, konsentrasi, dan keseimbangan hormon tubuh dengan nutrisi esensial.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Galeri Produk</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1563636619-e9143da7973b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Produk Vitalin 1">
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1558636508-e0db3814bd1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Produk Vitalin 2">
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1579113800032-c38bd7635818?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Produk Vitalin 3">
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Produk Vitalin 4">
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Produk Vitalin 5">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details Section -->
+    <section id="details" class="product-details">
+        <div class="container">
+            <div class="section-title">
+                <h2>Detail Produk</h2>
+            </div>
+            <div class="details-grid">
+                <div class="detail-card animate-on-scroll">
+                    <h3>Informasi Produk</h3>
+                    <ul>
+                        <li>Nama Produk: VITALIN Platinum Royal Jelly</li>
+                        <li>Berat Bersih: 250 gram (10 sachet)</li>
+                        <li>Izin Edar BPOM: MD 071211001300105</li>
+                        <li>Sertifikasi Halal: ID 34110000753490522</li>
+                        <li>Produsen: Diproses langsung di peternakan kambing ras Saanen – Swiss</li>
+                        <li>Komposisi: Susu kambing murni & Royal Jelly alami</li>
+                        <li>Rasa: Lembut, gurih, dan tidak amis</li>
+                    </ul>
+                </div>
+                <div class="detail-card animate-on-scroll">
+                    <h3>Komposisi</h3>
+                    <ul>
+                        <li>Susu Kambing 50%</li>
+                        <li>Krimer Nabati 20% (mengandung protein susu)</li>
+                        <li>Gula 20%</li>
+                        <li>Royal Jelly 10%</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-style: italic;">Mengandung alergen, lihat daftar bahan yang dicetak tebal.</p>
+                </div>
+                <div class="detail-card animate-on-scroll">
+                    <h3>Cara Penyajian</h3>
+                    <ul>
+                        <li>Tuangkan isi kemasan ke dalam gelas</li>
+                        <li>Tambahkan air panas 150 ml</li>
+                        <li>Aduk hingga rata</li>
+                    </ul>
+                    <h3 style="margin-top: 1.5rem;">Aturan Pakai</h3>
+                    <ul>
+                        <li>Pagi hari: 1 sachet sebelum sarapan</li>
+                        <li>Malam hari: 1 sachet sebelum tidur</li>
+                    </ul>
+                </div>
+                <div class="detail-card animate-on-scroll">
+                    <h3>Informasi Nilai Gizi per Sajian (25g)</h3>
+                    <ul>
+                        <li>Energi total: 110 kkal</li>
+                        <li>Energi dari lemak: 25 kkal</li>
+                        <li>Lemak total: 3g (4% AKG)</li>
+                        <li>Kolesterol: 3mg (1% AKG)</li>
+                        <li>Lemak jenuh: 2g (10% AKG)</li>
+                        <li>Protein: 1g (1% AKG)</li>
+                        <li>Karbohidrat total: 20g (6% AKG)</li>
+                        <li>Gula: 11g</li>
+                        <li>Natrium: 15mg (1% AKG)</li>
+                        <li>Kalium: 1% AKG</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pesan Sekarang</h2>
+            </div>
+            <p style="max-width: 700px; margin: 0 auto 2rem; line-height: 1.7;">Segera pesan dan rasakan khasiat VITALIN Platinum Royal Jelly. Tersedia pengiriman ke seluruh Indonesia dengan layanan cepat dan aman.</p>
+            <a href="https://wa.me/6289513980460" class="btn">Hubungi Kami via WhatsApp</a>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div>
+                        <h3>WhatsApp 1</h3>
+                        <p>0895-1398-0460</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div>
+                        <h3>WhatsApp 2</h3>
+                        <p>0822-4200-7345</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div>
+                        <h3>WhatsApp 3</h3>
+                        <p>0857-2940-9426</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">VITALIN Platinum</div>
+                <div class="footer-links">
+                    <a href="#home">Beranda</a>
+                    <a href="#about">Tentang</a>
+                    <a href="#benefits">Manfaat</a>
+                    <a href="#gallery">Galeri</a>
+                    <a href="#details">Detail Produk</a>
+                    <a href="#contact">Kontak</a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2023 VITALIN Platinum. Semua Hak Cipta Dilindungi.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animasi saat scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Smooth scroll untuk navigasi
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
